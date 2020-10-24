@@ -1,7 +1,7 @@
 # Speech Quantum Deep Learning
 Quantum Machine Learning for Speech Processing.
 
-<img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/demo.png" width="200">
+<img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/demo.png" width="300">
 
 
 Arxiv Link. Tutorial Link
