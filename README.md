@@ -1,4 +1,4 @@
-# speech_quantum_deep_learning
+# Speech Quantum Deep Learning
 Quantum Machine Learning for Speech Processing.
 
 Arxiv.
