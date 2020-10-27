@@ -6,10 +6,9 @@ Quantum Machine Learning for Speech Processing.
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/demo.png" width="300">
 
 
-[Preprint](https://arxiv.org/abs/2010.13309)
+Preprint [Link](https://arxiv.org/abs/2010.13309)
 
 Tutorial Link.
-
 
 
 - Only for academic purpose. 
