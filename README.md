@@ -7,7 +7,9 @@ Quantum Machine Learning for Speech Processing.
 
 - Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition
 
-Preprint [Link](https://arxiv.org/abs/2010.13309)
+Chao-Han Huck Yang, Jun Qi, Samuel Yen-Chi Chen, Pin-Yu Chen, Sabato Marco Siniscalchi, Xiaoli Ma, Chin-Hui Lee
+
+- Preprint [Link](https://arxiv.org/abs/2010.13309)
 
 Tutorial Link.
 
