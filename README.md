@@ -18,5 +18,14 @@ Tutorial Link.
 
 The author is affiliated with Georgia Tech, USA.
 
+## Reference
 
+```bib
+@article{yang2020decentralizing,
+  title={Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition},
+  author={Yang, Chao-Han Huck and Qi, Jun and Chen, Samuel Yen-Chi and Chen, Pin-Yu and Siniscalchi, Sabato Marco and Ma, Xiaoli and Lee, Chin-Hui},
+  journal={arXiv preprint arXiv:2010.13309},
+  year={2020}
+}
+```
 
