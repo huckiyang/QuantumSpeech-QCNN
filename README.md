@@ -42,6 +42,7 @@ tar -xf speech_commands_v0.01.tar.gz
 
 ### QCNN-RNN Attention Model
 
+- Use Additional U-Net
 
 Tutorial Link. 
 
