@@ -24,6 +24,16 @@ conda env create -f environment.yml
 
 Origin with tensorflow 2.0 with CUDA 10.0.
 
+## Dataset
+
+Google [Speech Commands Dataset V1](https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html)
+
+```shell
+mkdir ../dataset
+wget http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz
+tar -xf speech_commands_v0.01.tar.gz
+```
+
 ## Audio Features Extration
 
 ## Quanvolution
