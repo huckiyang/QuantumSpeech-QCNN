@@ -12,14 +12,14 @@ Quantum Machine Learning for Speech Processing.
 by tensorflow 2.0 with CUDA 10.0.
 
 - option 1: from conda and pip install
-```shell
+```bash
 conda install -c anaconda tensorflow-gpu=2.0
 conda install -c conda-forge librosa 
 pip install pennylane --upgrade 
 ```
 
 - option 2: from environment.yml (for 2080 Ti with CUDA 10.0) 
-```shell
+```bash
 conda env create -f environment.yml
 ```
 
