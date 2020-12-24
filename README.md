@@ -44,7 +44,9 @@ tar -xf speech_commands_v0.01.tar.gz
 
 - Use Additional U-Net
 
-## Visualization and Neural Saliency
+### Visualization and Neural Saliency
+
+<img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/cam_sp_0.png" width="350">
 
 
 Tutorial Link. 
