@@ -9,8 +9,6 @@ Quantum Machine Learning for Speech Processing.
 
 ## Environment
 
-by tensorflow 2.0 with CUDA 10.0.
-
 - option 1: from conda and pip install
 ```bash
 conda install -c anaconda tensorflow-gpu=2.0
@@ -24,9 +22,15 @@ pip install pennylane --upgrade
 conda env create -f environment.yml
 ```
 
+Origin with tensorflow 2.0 with CUDA 10.0.
 
-Tutorial Link.
+## Audio Features Extration
 
+## Quanvolution
+
+## Run
+
+Tutorial Link. 
 
 - Only for academic purpose. 
 
