@@ -10,10 +10,10 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import matplotlib.image as mpimg
 
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
-q_model = keras.models.load_model('checkpoints/0910_1843_qaunv_sp2cmd.hdf5') # 1014_1231
-q_train = np.load("data_quantum/q_train_speech_all.npy")
-x_train = np.load("data_quantum/x_train_speech_all.npy")
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
+q_model = keras.models.load_model('../checkpoints/0910_1843_qaunv_sp2cmd.hdf5') # 1014_1231
+q_train = np.load("../data_quantum/q_train_speech_all.npy")
+x_train = np.load("../data_quantum/x_train_speech_all.npy")
 idx = 0
 
 def layer_output(in_feats, model, ly_name = "batch_normalization_6 ", k= idx):
@@ -56,7 +56,7 @@ def to_rgb(heatmap):
     jet_heatmap = keras.preprocessing.image.img_to_array(jet_heatmap)
 
     # Save the superimposed image
-    save_path = "images/color_cam.jpg"
+    save_path = "../images/color_cam.jpg"
     superimposed_img = keras.preprocessing.image.array_to_img(jet_heatmap)
     superimposed_img.save(save_path)
 
@@ -67,11 +67,11 @@ def to_rgb(heatmap):
 q_heatmap, _ = layer_output(q_train, q_model, "conv2d_2")
 q_cam = to_rgb(q_heatmap)
 
-x_model = keras.models.load_model('checkpoints/0910_1843_conv_sp2cmd.hdf5')
+x_model = keras.models.load_model('../checkpoints/0910_1843_conv_sp2cmd.hdf5')
 x_heatmap, _ = layer_output(x_train, x_model, "conv2d_7")
 x_cam = to_rgb(x_heatmap)
 
-c_model = keras.models.load_model('checkpoints/0910_1843_base_sp2cmd.hdf5')
+c_model = keras.models.load_model('../checkpoints/0910_1843_base_sp2cmd.hdf5')
 c_heatmap, _ = layer_output(x_train, c_model, "conv2d_12")
 c_cam = to_rgb(c_heatmap)
 
@@ -99,11 +99,7 @@ plt.xticks([])
 plt.yticks([])
 plt.title('(d) Baseline RNN (UAtt)', fontsize=a)
 plt.tight_layout()
-plt.savefig("images/z_cam_color_"+str(idx)+".pdf")
+plt.savefig("../images/z_cam_color_"+str(idx)+".png")
 
-# np.save("data_quantum/heatmap.npy", heatmap)
-# plt.figure
-# plt.matshow(np.transpose(vis_map(heatmap)[0,:,:]))
-# plt.savefig("images/heatmap.png")
 
 
