@@ -47,11 +47,11 @@ Tutorial Link.
 
 - Only for academic purpose. 
 
-The author is affiliated with Georgia Tech, USA.
+The author is affiliated with Georgia Tech.
 
 ## Reference
 
-If you feel this work helps your research or use the code, please consider reference our paper. Thank you.
+If you think this work helps your research or use the code, please consider reference our paper. Thank you!
 
 ```bib
 @article{yang2020decentralizing,
