@@ -38,7 +38,7 @@ tar -xf speech_commands_v0.01.tar.gz
 
 ### Quanvolution
 
-## Run
+## Training
 
 ### QCNN-RNN Attention Model
 
