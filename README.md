@@ -3,13 +3,26 @@ Quantum Machine Learning for Speech Processing.
 
 - Official Code will be released on December 27th 2020. 
 
-<img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/demo.png" width="300">
+<img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/demo.png" width="200">
 
-- Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition
+- [Paper Link](https://arxiv.org/abs/2010.13309)
 
-Chao-Han Huck Yang, Jun Qi, Samuel Yen-Chi Chen, Pin-Yu Chen, Sabato Marco Siniscalchi, Xiaoli Ma, Chin-Hui Lee
+## Environment
 
-- Preprint [Link](https://arxiv.org/abs/2010.13309)
+by tensorflow 2.0 with CUDA 10.0.
+
+- option 1: from conda and pip install
+```shell
+conda install -c anaconda tensorflow-gpu=2.0
+conda install -c conda-forge librosa 
+pip install pennylane --upgrade 
+```
+
+- option 2: from environment.yml (for 2080 Ti with CUDA 10.0) 
+```shell
+conda env create -f environment.yml
+```
+
 
 Tutorial Link.
 
@@ -19,6 +32,8 @@ Tutorial Link.
 The author is affiliated with Georgia Tech, USA.
 
 ## Reference
+
+If you feel this work helps your research or use the code, please consider reference our paper. Thank you.
 
 ```bib
 @article{yang2020decentralizing,
