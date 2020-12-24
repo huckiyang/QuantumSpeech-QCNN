@@ -14,6 +14,7 @@ by tensorflow 2.0 with CUDA 10.0.
 - option 1: from conda and pip install
 ```bash
 conda install -c anaconda tensorflow-gpu=2.0
+conda install -c conda-forge scikit-learn 
 conda install -c conda-forge librosa 
 pip install pennylane --upgrade 
 ```
