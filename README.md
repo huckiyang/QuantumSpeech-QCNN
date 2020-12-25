@@ -46,7 +46,7 @@ You could use `np.load` to load these features to train your own quantum speech 
 
 ## 3. Training
 
-<img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/QCNN_Sys_ASR.png" width="200">
+<img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/QCNN_Sys_ASR.png" width="400">
 
 ### 3.1 QCNN U-Net Bi-LSTM Attention Model
 
