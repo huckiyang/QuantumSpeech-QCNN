@@ -34,6 +34,12 @@ wget http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz
 tar -xf speech_commands_v0.01.tar.gz
 ```
 
+### Pre-processed Features
+
+We provide 2000 pre-processed feautres in `data_quantum`, which included both mel features, and quanvolution features.
+
+You could use `np.load` to load these features to train your own quantum speech processing model in this repo. (1500 for training and 500 for testing)
+
 ### Audio Features Extration
 
 ### Quanvolution
