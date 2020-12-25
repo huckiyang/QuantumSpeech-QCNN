@@ -107,6 +107,10 @@ Noted this Quantum ASR CTC version is only supported `tensorflow-gpu==2.2`. Plea
 python qsr_ctc_wer.py
 ```
 
+```python
+=== QCNN-ASR WER: 9.17%
+```
+
 Tutorial Link. 
 
 - Only for academic purpose. Please contact the author for the other purposes.
