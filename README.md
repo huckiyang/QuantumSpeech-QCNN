@@ -130,4 +130,4 @@ If you think this work helps your research or use the code, please consider refe
 
 ## FAQ
 
-Since the area between speech and quantum ML is still quite new, please feel free to open a [issue](https://github.com/huckiyang/speech_quantum_dl/issues) for discussion.
+Since the area between speech and quantum ML is still quite new, please feel free to open a [issue](https://github.com/huckiyang/speech_quantum_dl/issues) for discussion. Feel free to use this implementation for other speech processing task (e.g., speaker recognition, speech seperation, event detection ...) as the quantum advantages discussed in the [paper](https://arxiv.org/abs/2010.13309).
