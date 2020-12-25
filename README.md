@@ -7,7 +7,7 @@ Quantum Machine Learning for Speech Processing.
 
 - [Paper Link](https://arxiv.org/abs/2010.13309) "Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition" 
 
-## Environment
+## 1. Environment
 
 - option 1: from conda and pip install
 ```bash
@@ -24,7 +24,7 @@ conda env create -f environment.yml
 
 Origin with tensorflow 2.0 with CUDA 10.0.
 
-## Dataset
+## 2. Dataset
 
 Google [Speech Commands Dataset V1](https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html)
 
@@ -34,23 +34,23 @@ wget http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz
 tar -xf speech_commands_v0.01.tar.gz
 ```
 
-### Pre-processed Features
+### 2.1. Pre-processed Features
 
 We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features.
 
 You could use `np.load` to load these features to train your own quantum speech processing model in this repo. (1500 for training and 500 for testing)
 
-### Audio Features Extration
+### 2.2. Audio Features Extration
 
-### Quanvolution
+### 2.3. Quanvolution
 
-## Training
+## 3. Training
 
-### QCNN-RNN Attention Model
+### 3.1 QCNN-RNN Attention Model
 
 - Use Additional U-Net
 
-### Neural Saliency by Class Activation Mapping (CAM)
+### 3.2 Neural Saliency by Class Activation Mapping (CAM)
 
 ```shell
 python cam_sp.py
@@ -58,7 +58,7 @@ python cam_sp.py
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/cam_sp_0.png" width="350">
 
-## CTC Model for Automatic Speech Recognition 
+### 3.3 CTC Model for Automatic Speech Recognition 
 
 We also provide a CTC model with Word Error Rate Evaluation for Quantum Speech Recognition. 
 
