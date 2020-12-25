@@ -26,7 +26,7 @@ Origin with tensorflow 2.0 with CUDA 10.0.
 
 ## 2. Dataset
 
-Google [Speech Commands Dataset V1](https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html)
+We use Google [Speech Commands Dataset V1](https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html) for Limited-Vocabulary Speech Recognition.
 
 ```shell
 mkdir ../dataset
