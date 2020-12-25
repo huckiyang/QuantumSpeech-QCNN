@@ -36,9 +36,9 @@ tar -xf speech_commands_v0.01.tar.gz
 
 ### 2.1. Pre-processed Features
 
-We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features.
+We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing.
 
-You could use `np.load` to load these features to train your own quantum speech processing model in this repo. (1500 for training and 500 for testing)
+You could use `np.load` to load these features to train your own quantum speech processing model in this repo. 
 
 ### 2.2. Audio Features Extration
 
