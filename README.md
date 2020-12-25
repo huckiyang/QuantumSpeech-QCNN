@@ -1,7 +1,7 @@
 # Speech Quantum Deep Learning
 Quantum Machine Learning for Speech Processing.
 
-- **NEW** Released the quantum speech processing code! 
+- **NEW** Released the quantum speech processing code! (12/24) 
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/demo.png" width="200">
 
