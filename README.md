@@ -36,7 +36,7 @@ tar -xf speech_commands_v0.01.tar.gz
 
 ### 2.1. Pre-processed Features
 
-We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing.
+We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing. You could get `85%` test accuracy these data.                              
 
 You could use `np.load` to load these features to train your own quantum speech processing model in this repo. 
 
@@ -48,7 +48,19 @@ You could use `np.load` to load these features to train your own quantum speech 
 
 ### 3.1 QCNN-RNN Attention Model
 
-- Use Additional U-Net
+Spoken Terms Recognition
+
+```shell
+python main_qsr.py
+```
+
+In 30 epochs, 
+
+```python
+1500/1500 [==============================] - 3s 2ms/sample - loss: 0.0237 - accuracy: 0.9913 - val_loss: 0.7331 - val_accuracy: 0.8500                              
+```
+
+- without Additional U-Net proposed in [1]
 
 ### 3.2 Neural Saliency by Class Activation Mapping (CAM)
 
@@ -70,7 +82,7 @@ The author is affiliated with Georgia Tech.
 
 ## Reference
 
-If you think this work helps your research or use the code, please consider reference our paper. Thank you!
+[1] If you think this work helps your research or use the code, please consider reference our paper. Thank you!
 
 ```bib
 @article{yang2020decentralizing,
