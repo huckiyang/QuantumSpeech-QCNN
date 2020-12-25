@@ -38,7 +38,7 @@ tar -xf speech_commands_v0.01.tar.gz
 
 We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing. You could get `90.6%` test accuracy by the data.                              
 
-You could use `np.load` to load these features to train your own quantum speech processing model in `3.1`. 
+You could use `np.load` to load these features to train your own quantum speech processing model in [`3.1`](https://github.com/huckiyang/speech_quantum_dl/blob/main/README.md#3-training). 
 
 ### 2.2. Audio Features Extration (optional)
 
