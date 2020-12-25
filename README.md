@@ -99,7 +99,9 @@ python cam_sp.py
 
 ### 3.3 CTC Model for Automatic Speech Recognition 
 
-We also provide a CTC model with Word Error Rate Evaluation for Quantum Speech Recognition for future studies to the community refer to the [discussion](https://arxiv.org/abs/2010.13309). 
+We also provide a CTC model with Word Error Rate (WER) evaluation for Quantum Speech Recognition for future studies to the community refer to the [discussion](https://arxiv.org/abs/2010.13309). 
+
+For example, an output "y-e--a" of input "yes" is identified as an incorrect word with the CTC alignment.
 
 Noted this Quantum ASR CTC version is only supported `tensorflow-gpu==2.2`. Please create a new environment for running this experiment.
 
@@ -113,7 +115,7 @@ python qsr_ctc_wer.py
 
 Tutorial Link. 
 
-- Only for academic purpose. Please contact the author for the other purposes.
+- Only for academic purpose. Feel free to contact the author for the other purposes.
 
 ## Reference
 
@@ -132,4 +134,4 @@ If you think this work helps your research or use the code, please consider refe
 
 Since the area between speech and quantum ML is still quite new, please feel free to open a [issue](https://github.com/huckiyang/speech_quantum_dl/issues) for discussion. 
 
-Feel free to use this implementation for other speech processing task (e.g., speaker recognition, speech seperation, event detection ...) as the quantum advantages discussed in the [paper](https://arxiv.org/abs/2010.13309).
+Feel free to use this implementation for other speech processing or squence modeling tasks (e.g., speaker recognition, speech seperation, event detection ...) as the quantum advantages discussed in the [paper](https://arxiv.org/abs/2010.13309).
