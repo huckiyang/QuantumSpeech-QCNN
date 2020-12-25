@@ -52,6 +52,9 @@ python cam_sp.py
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/cam_sp_0.png" width="350">
 
+## CTC Model for Automatic Speech Recognition 
+
+We also provide a CTC model with Word Error Rate Evaluation for Quantum Speech Recognition. 
 
 Tutorial Link. 
 
