@@ -86,9 +86,7 @@ We also provide a CTC model with Word Error Rate Evaluation for Quantum Speech R
 
 Tutorial Link. 
 
-- Only for academic purpose. 
-
-The author is affiliated with Georgia Tech.
+- Only for academic purpose. Please contact the author for the other purposes.
 
 ## Reference
 
@@ -103,3 +101,6 @@ If you think this work helps your research or use the code, please consider refe
 }
 ```
 
+## FAQ
+
+Since the area between speech and quantum ML is still quite new, please feel free to open a [issue](https://github.com/huckiyang/speech_quantum_dl/issues) for discussion.
