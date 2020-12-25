@@ -23,12 +23,12 @@ labels = [
 ]
 
 train_audio_path = '../dataset/'
-SAVE_PATH = "../quantum_speech/data_quantum/" # Data saving folder
+SAVE_PATH = "data_quantum/" # Data saving folder
 
 sr = 16000 # sampling rate
 model_use = 1 # use of model
 port = 1
-n_eps = 3 # number of epochs
+n_eps = 30 # number of epochs
 b_size = 16 # batch size
 compute_train = False
 compute_quanv = False
@@ -64,23 +64,23 @@ def gen_quanv(x_train, x_valid, kr):
 if compute_train == True:
     x_train, x_valid, y_train, y_valid = gen_train(labels, train_audio_path, sr, port) 
 else:
-    x_train = np.load(SAVE_PATH + "x_train_speech_all.npy")
-    x_valid = np.load(SAVE_PATH + "x_test_speech_all.npy")
-    y_train = np.load(SAVE_PATH + "y_train_speech_all.npy")
-    y_valid = np.load(SAVE_PATH + "y_test_speech_all.npy")
+    x_train = np.load(SAVE_PATH + "x_train_demo.npy")
+    x_valid = np.load(SAVE_PATH + "x_test_demo.npy")
+    y_train = np.load(SAVE_PATH + "y_train_demo.npy")
+    y_valid = np.load(SAVE_PATH + "y_test_demo.npy")
 
 
 if compute_quanv:
     q_train, q_valid = gen_quanv(x_train, x_valid, 2) # or kernal = 3
 else:
-    q_train = np.load(SAVE_PATH + "q_train_speech_all.npy")
-    q_valid = np.load(SAVE_PATH + "q_test_speech_all.npy")
+    q_train = np.load(SAVE_PATH + "q_train_demo.npy")
+    q_valid = np.load(SAVE_PATH + "q_test_demo.npy")
 
 ## For Quanv Exp.
 early_stop = EarlyStopping(monitor='val_loss', mode='min', 
                            verbose=1, patience=10, min_delta=0.0001)
 
-checkpoint = ModelCheckpoint('checkpoints/final.hdf5', monitor='val_acc', 
+checkpoint = ModelCheckpoint('checkpoints/best_demo.hdf5', monitor='val_acc', 
                              verbose=1, save_best_only=True, mode='max')
 
 
@@ -101,6 +101,6 @@ history = model.fit(
 )
 
 
-v_model.save('checkpoints/'+ data_ix + '_sr.hdf5')
+model.save('checkpoints/'+ data_ix + '_demo.hdf5')
 
 print("=== Batch Size: ", b_size)
