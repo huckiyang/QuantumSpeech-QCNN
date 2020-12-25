@@ -47,7 +47,7 @@ tar -xf speech_commands_v0.01.tar.gz
 ### Neural Saliency by Class Activation Mapping (CAM)
 
 ```shell
-python saliency/cam_sp.py
+python cam_sp.py
 ```
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/cam_sp_0.png" width="350">
