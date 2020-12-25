@@ -12,15 +12,8 @@ import warnings
 import qiskit
 from qiskit.providers.aer.noise.device import basic_device_noise_model
 
-# print("--- bogota training decoding")
-
-# with open("load_qiskit_noise/ibmq_bogota_noise" + ".txt", "rb") as fp:
-#    device_properties = pickle.load(fp)
-
-# noise_model = basic_device_noise_model(device_properties)
-
 n_w = 4 # numbers of wires def 4
-noise_mode = False
+noise_mode = False # for running at QPU
 
 if  noise_mode == True:
     dev = qml.device('qiskit.aer', wires= n_w, noise_model=noise_model)
@@ -46,7 +39,7 @@ def circuit(phi=None):
 
 def quanv(image, kr=2):
     h_feat, w_feat, ch_n = image.shape
-    """Convolves the input image with many applications of the same quantum circuit."""
+    """Convolves the input speech with many applications of the same quantum circuit."""
     out = np.zeros((h_feat//kr, w_feat//kr, n_w))
 
     # Loop over the coordinates of the top-left pixel of 2X2 squares
@@ -65,17 +58,14 @@ def quanv(image, kr=2):
 
 def gen_qspeech(x_train, x_valid, kr): # kernal size = 2x2 or 3x3
     q_train = []
-    print("Quantum pre-processing of train images:")
+    print("Quantum pre-processing of train Speech:")
     for idx, img in enumerate(x_train):
         print("{}/{}        ".format(idx + 1, len(x_train)), end="\r")
         q_train.append(quanv(img, kr))
     q_train = np.asarray(q_train)
 
     q_valid = []
-    print("\nQuantum pre-processing of test images:")
-    #for idx, img in enumerate(x_valid):
-    #    print("{}/{}        ".format(idx + 1, len(x_valid)), end="\r")
-    #    q_valid.append(quanv(img, kr))
+    print("\nQuantum pre-processing of test Speech:")
     q_valid = np.asarray(q_valid)
     
     return q_train, q_valid
