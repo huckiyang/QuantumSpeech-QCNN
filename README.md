@@ -1,7 +1,7 @@
 # Speech Quantum Deep Learning
 Quantum Machine Learning for Speech Processing.
 
-- Official Code will be released on December 27th 2020. 
+- **NEW** Released the quantum speech processing code! 
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/demo.png" width="200">
 
