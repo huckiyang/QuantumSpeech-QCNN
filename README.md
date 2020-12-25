@@ -60,11 +60,11 @@ In 30 epochs. One way to improve the recognition system performance is to encode
 1500/1500 [==============================] - 3s 2ms/sample - val_loss: 0.7331 - val_accuracy: 0.8500                              
 ```
 
-- without Additional U-Net as the baseline proposed in
+- without Additional U-Net as the method proposed in [Douglas C. de Andrade et al.](https://arxiv.org/abs/1808.08929)
 
 Please set `use_Unet = False.` in [model.py](https://github.com/huckiyang/speech_quantum_dl/blob/main/models.py#L81).
 
-```
+```python
 def attrnn_Model(x_in, labels, ablation = False):
     # simple LSTM
     rnn_func = L.LSTM
