@@ -1,7 +1,7 @@
 # Speech Quantum Deep Learning
 Quantum Machine Learning for Speech Processing.
 
-- Official Code will be released on December 27th 2020. 
+- **NEW** Released the quantum speech processing code! (12/24) 
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/demo.png" width="200">
 
@@ -42,7 +42,24 @@ You could use `np.load` to load these features to train your own quantum speech 
 
 ### 2.2. Audio Features Extration
 
+Please set the sampling rate `sr` and data ratio (`--port N` for 1/N data; `--port 1` for all data) for extracting Mel Features.
+
+```python
+python main_qsr.py --sr 16000 --port 100 --mel 1 --quanv 1
+```
+
 ### 2.3. Quanvolution
+
+If you have pre-load audio features from `2.2.` you can set the quantum convolution kernal size in `helper_q_tool.py` function [quanv](https://github.com/huckiyang/speech_quantum_dl/blob/main/helper_q_tool.py#L47). We provide an example for kernal size = 3 in [line 57](https://github.com/huckiyang/speech_quantum_dl/blob/main/helper_q_tool.py#L57).
+
+You will see a message below during the Quanvolution Encoding.
+
+```python
+===== Shape 60 126
+Kernal =  2
+Quantum pre-processing of train Speech:
+2/175
+```
 
 ## 3. Training
 
