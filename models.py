@@ -39,30 +39,6 @@ def dense_Model(x, labels):
     )
     return model
 
-def rnn_Model(h_feat, w_feat, labels):
-    """Initializes and returns a custom Keras model
-    which is ready to be trained."""
-    model = keras.models.Sequential([
-        Input(shape=(h_feat, w_feat)),
-        BatchNormalization(axis=-1, momentum=0.99, epsilon=1e-3, center=True, scale=True),
-        #Conv1D(256, 1, strides=1, padding='valid', activation='relu', name='conv1d'),
-        #Dropout(0.3),
-        #Bidirectional(GRU(256, activation='tanh', return_sequences=True, implementation=2, name='rnn_0', dropout=0.5)),
-        #BatchNormalization(axis=-1, momentum=0.99, epsilon=1e-3, center=True, scale=True),
-        Bidirectional(GRU(256, activation='tanh', return_sequences=True, implementation=2, name='rnn_1', dropout=0.5)),
-        BatchNormalization(axis=-1, momentum=0.99, epsilon=1e-3, center=True, scale=True),
-        Bidirectional(GRU(256, activation='tanh', return_sequences=False, implementation=2, name='rnn_2', dropout=0.5)),
-        BatchNormalization(axis=-1, momentum=0.99, epsilon=1e-3, center=True, scale=True),
-        Dense(len(labels), activation="softmax")
-    ])
-
-    model.compile(
-        optimizer=SGD(lr=0.02, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=5),
-        loss="categorical_crossentropy",
-        metrics=["accuracy"],
-    )
-    return model
-
 # define cnn model
 def cnn_Model(h_feat, w_feat, labels):
 	model = Sequential()
@@ -78,7 +54,7 @@ def cnn_Model(h_feat, w_feat, labels):
 def attrnn_Model(x_in, labels, ablation = False):
     # simple LSTM
     rnn_func = L.LSTM
-    use_Unet = False
+    use_Unet = True
 
     if len(x_in.shape) >= 3:
         h_feat,w_feat,ch_size = x_in.shape

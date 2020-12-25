@@ -12,7 +12,7 @@ from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from tensorflow.keras.optimizers import RMSprop, SGD
 ## Local Definition 
 from data_generator import gen_mel
-from models import cnn_Model, rnn_Model, dense_Model, attrnn_Model
+from models import cnn_Model, dense_Model, attrnn_Model
 from helper_q_tool import gen_qspeech, plot_acc_loss, show_speech
 os.environ["CUDA_VISIBLE_DEVICES"]="1"
 import time as ti
@@ -27,7 +27,7 @@ SAVE_PATH = "data_quantum/" # Data saving folder
 
 sr = 16000 # sampling rate
 model_use = 1 # use of model
-port = 1
+port = 100 # (1/N) data ratio
 n_eps = 30 # number of epochs
 b_size = 16 # batch size
 compute_train = False
@@ -56,8 +56,8 @@ def gen_quanv(x_train, x_valid, kr):
     print("Kernal = ", kr)
     q_train, q_valid = gen_qspeech(x_train, x_valid, kr)
 
-    np.save(SAVE_PATH + "pub_bogota_train_speech.npy", q_train)
-    # np.save(SAVE_PATH + "pub_rome_test_speech.npy", q_valid)
+    np.save(SAVE_PATH + "demo_t1.npy", q_train)
+    np.save(SAVE_PATH + "demo_t2.npy", q_valid)
 
     return q_train, q_valid
 
@@ -71,7 +71,7 @@ else:
 
 
 if compute_quanv:
-    q_train, q_valid = gen_quanv(x_train, x_valid, 2) # or kernal = 3
+    q_train, q_valid = gen_quanv(x_train, x_valid, 2) 
 else:
     q_train = np.load(SAVE_PATH + "q_train_demo.npy")
     q_valid = np.load(SAVE_PATH + "q_test_demo.npy")
