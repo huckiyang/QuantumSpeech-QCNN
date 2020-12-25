@@ -38,9 +38,9 @@ tar -xf speech_commands_v0.01.tar.gz
 
 We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing. You could get `90.6%` test accuracy by the data.                              
 
-You could use `np.load` to load these features to train your own quantum speech processing model in this repo. 
+You could use `np.load` to load these features to train your own quantum speech processing model in `3.1`. 
 
-### 2.2. Audio Features Extration
+### 2.2. Audio Features Extration (optional)
 
 Please set the sampling rate `sr` and data ratio (`--port N` for 1/N data; `--port 1` for all data) for extracting Mel Features.
 
@@ -48,7 +48,7 @@ Please set the sampling rate `sr` and data ratio (`--port N` for 1/N data; `--po
 python main_qsr.py --sr 16000 --port 100 --mel 1 --quanv 1
 ```
 
-### 2.3. Quanvolution
+### 2.3. Quanvolution (optional)
 
 If you have pre-load audio features from `2.2.` you can set the quantum convolution kernal size in `helper_q_tool.py` function [quanv](https://github.com/huckiyang/speech_quantum_dl/blob/main/helper_q_tool.py#L47). We provide an example for kernal size = 3 in [line 57](https://github.com/huckiyang/speech_quantum_dl/blob/main/helper_q_tool.py#L57).
 
