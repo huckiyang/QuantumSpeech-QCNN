@@ -99,7 +99,7 @@ python cam_sp.py
 
 ### 3.3 CTC Model for Automatic Speech Recognition 
 
-We also provide a CTC model with Word Error Rate Evaluation for Quantum Speech Recognition. 
+We also provide a CTC model with Word Error Rate Evaluation for Quantum Speech Recognition for future studies to the community refer to the [discussion](https://arxiv.org/abs/2010.13309). 
 
 Noted this Quantum ASR CTC version is only supported `tensorflow-gpu==2.2`. Please create a new environment for running this experiment.
 
