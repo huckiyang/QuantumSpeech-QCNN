@@ -36,7 +36,7 @@ tar -xf speech_commands_v0.01.tar.gz
 
 ### 2.1. Pre-processed Features
 
-We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing. You could get `85%` test accuracy these data.                              
+We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing. You could get `90.6%` test accuracy these data.                              
 
 You could use `np.load` to load these features to train your own quantum speech processing model in this repo. 
 
@@ -54,10 +54,10 @@ Spoken Terms Recognition with additional [U-Net Encoder](https://arxiv.org/abs/2
 python main_qsr.py
 ```
 
-In 30 epochs. One way to improve the recognition system performance is to encode more data for training, refer to `2.2.` and `2.3`.
+In 25 epochs. One way to improve the recognition system performance is to encode more data for training, refer to `2.2.` and `2.3`.
 
 ```python
-1500/1500 [==============================] - 3s 2ms/sample - val_loss: 0.7331 - val_accuracy: 0.8500                              
+1500/1500 [==============================] - 3s 2ms/sample - val_loss: 0.4408 - val_accuracy: 0.9060                              
 ```
 
 - without Additional U-Net as the method proposed in [Douglas C. de Andrade et al.](https://arxiv.org/abs/1808.08929)
