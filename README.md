@@ -48,7 +48,7 @@ You could use `np.load` to load these features to train your own quantum speech 
 
 ### 3.1 QCNN-RNN Attention Model
 
-Spoken Terms Recognition
+Spoken Terms Recognition with additional [U-Net Encoder](https://arxiv.org/abs/2010.13309)
 
 ```shell
 python main_qsr.py
@@ -57,10 +57,10 @@ python main_qsr.py
 In 30 epochs, 
 
 ```python
-1500/1500 [==============================] - 3s 2ms/sample - loss: 0.0237 - accuracy: 0.9913 - val_loss: 0.7331 - val_accuracy: 0.8500                              
+1500/1500 [==============================] - 3s 2ms/sample - val_loss: 0.7331 - val_accuracy: 0.8500                              
 ```
 
-- without Additional U-Net proposed in [1]
+- without Additional U-Net as the baseline proposed 
 
 ### 3.2 Neural Saliency by Class Activation Mapping (CAM)
 
@@ -82,7 +82,7 @@ The author is affiliated with Georgia Tech.
 
 ## Reference
 
-[1] If you think this work helps your research or use the code, please consider reference our paper. Thank you!
+If you think this work helps your research or use the code, please consider reference our paper. Thank you!
 
 ```bib
 @article{yang2020decentralizing,
