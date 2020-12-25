@@ -10,7 +10,7 @@ Quantum Machine Learning for Speech Processing.
 ## 1. Environment
 
 - option 1: from conda and pip install
-```bash
+```python
 conda install -c anaconda tensorflow-gpu=2.0
 conda install -c conda-forge scikit-learn 
 conda install -c conda-forge librosa 
@@ -18,7 +18,7 @@ pip install pennylane --upgrade
 ```
 
 - option 2: from environment.yml (for 2080 Ti with CUDA 10.0) 
-```bash
+```python
 conda env create -f environment.yml
 ```
 
@@ -54,7 +54,7 @@ Spoken Terms Recognition with additional [U-Net Encoder](https://arxiv.org/abs/2
 python main_qsr.py
 ```
 
-In 30 epochs, 
+In 30 epochs. One way to improve the recognition system performance is to encode more data for training, refer to `2.2.` and `2.3`.
 
 ```python
 1500/1500 [==============================] - 3s 2ms/sample - val_loss: 0.7331 - val_accuracy: 0.8500                              
