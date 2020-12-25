@@ -10,7 +10,7 @@ Quantum Machine Learning for Speech Processing.
 ## 1. Environment
 
 - option 1: from conda and pip install
-```bash
+```python
 conda install -c anaconda tensorflow-gpu=2.0
 conda install -c conda-forge scikit-learn 
 conda install -c conda-forge librosa 
@@ -18,7 +18,7 @@ pip install pennylane --upgrade
 ```
 
 - option 2: from environment.yml (for 2080 Ti with CUDA 10.0) 
-```bash
+```python
 conda env create -f environment.yml
 ```
 
@@ -36,7 +36,7 @@ tar -xf speech_commands_v0.01.tar.gz
 
 ### 2.1. Pre-processed Features
 
-We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing.
+We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing. You could get `90.6%` test accuracy by the data.                              
 
 You could use `np.load` to load these features to train your own quantum speech processing model in this repo. 
 
@@ -46,10 +46,32 @@ You could use `np.load` to load these features to train your own quantum speech 
 
 ## 3. Training
 
-### 3.1 QCNN-RNN Attention Model
+<img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/QCNN_Sys_ASR.png" width="400">
 
-- Use Additional U-Net
+### 3.1 QCNN U-Net Bi-LSTM Attention Model
 
+Spoken Terms Recognition with additional [U-Net Encoder](https://arxiv.org/abs/2010.13309) discussed in our work.
+
+```shell
+python main_qsr.py
+```
+
+In 25 epochs. One way to improve the recognition system performance is to encode more data for training, refer to `2.2.` and `2.3`.
+
+```python
+1500/1500 [==============================] - 3s 2ms/sample - val_loss: 0.4408 - val_accuracy: 0.9060                              
+```
+
+- Alternatively, training without Additional U-Net as the method proposed in [Douglas C. de Andrade et al.](https://arxiv.org/abs/1808.08929)
+
+Please set `use_Unet = False.` in [model.py](https://github.com/huckiyang/speech_quantum_dl/blob/main/models.py#L81).
+
+```python
+def attrnn_Model(x_in, labels, ablation = False):
+    # simple LSTM
+    rnn_func = L.LSTM
+    use_Unet = False
+```
 ### 3.2 Neural Saliency by Class Activation Mapping (CAM)
 
 ```shell
@@ -64,9 +86,7 @@ We also provide a CTC model with Word Error Rate Evaluation for Quantum Speech R
 
 Tutorial Link. 
 
-- Only for academic purpose. 
-
-The author is affiliated with Georgia Tech.
+- Only for academic purpose. Please contact the author for the other purposes.
 
 ## Reference
 
@@ -81,3 +101,6 @@ If you think this work helps your research or use the code, please consider refe
 }
 ```
 
+## FAQ
+
+Since the area between speech and quantum ML is still quite new, please feel free to open a [issue](https://github.com/huckiyang/speech_quantum_dl/issues) for discussion.
