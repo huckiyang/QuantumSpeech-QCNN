@@ -14,6 +14,7 @@ from tensorflow.keras.optimizers import RMSprop, SGD
 from data_generator import gen_mel
 from models import cnn_Model, dense_Model, attrnn_Model
 from helper_q_tool import gen_qspeech, plot_acc_loss, show_speech
+import argparse
 os.environ["CUDA_VISIBLE_DEVICES"]="1"
 import time as ti
 data_ix = ti.strftime("%m%d_%H%M")
@@ -25,13 +26,15 @@ labels = [
 train_audio_path = '../dataset/'
 SAVE_PATH = "data_quantum/" # Data saving folder
 
-sr = 16000 # sampling rate
-model_use = 1 # use of model
-port = 100 # (1/N) data ratio
-n_eps = 30 # number of epochs
-b_size = 16 # batch size
-compute_train = False
-compute_quanv = False
+parser = argparse.ArgumentParser()
+parser.add_argument("--eps", type = int, default = 30, help = "Epochs") 
+parser.add_argument("--bsize", type = int, default = 16, help = "Batch Size")
+parser.add_argument("--sr", type = int, default = 16000, help = "Sampling Rate for input Speech")
+parser.add_argument("--net", type = int, default = 1, help = "(0) Dense Model, (1) U-Net RNN Attention")
+parser.add_argument("--mel", type = int, default = 0, help = "(0) Load Demo Features, (1) Extra Mel Features")
+parser.add_argument("--quanv", type = int, default = 0, help = "(0) Load Demo Features, (1) Extra Mel Features")
+parser.add_argument("--port", type = int, default = 100, help = "(1/N) data ratio for encoding ")
+args = parser.parse_args()
 
 def gen_train(labels, train_audio_path, sr, port):
     all_wave, all_label = gen_mel(labels, train_audio_path, sr, port)
@@ -61,8 +64,8 @@ def gen_quanv(x_train, x_valid, kr):
 
     return q_train, q_valid
 
-if compute_train == True:
-    x_train, x_valid, y_train, y_valid = gen_train(labels, train_audio_path, sr, port) 
+if args.mel == 1:
+    x_train, x_valid, y_train, y_valid = gen_train(labels, train_audio_path, args.sr, args.port) 
 else:
     x_train = np.load(SAVE_PATH + "x_train_demo.npy")
     x_valid = np.load(SAVE_PATH + "x_test_demo.npy")
@@ -70,7 +73,7 @@ else:
     y_valid = np.load(SAVE_PATH + "y_test_demo.npy")
 
 
-if compute_quanv:
+if args.quanv == 1:
     q_train, q_valid = gen_quanv(x_train, x_valid, 2) 
 else:
     q_train = np.load(SAVE_PATH + "q_train_demo.npy")
@@ -84,9 +87,9 @@ checkpoint = ModelCheckpoint('checkpoints/best_demo.hdf5', monitor='val_acc',
                              verbose=1, save_best_only=True, mode='max')
 
 
-if model_use == 0:
+if args.net == 0:
     model = dense_Model(x_train[0], labels)
-elif model_use == 1:
+elif args.net == 1:
     model = attrnn_Model(q_train[0], labels)
 
 model.summary()
@@ -94,13 +97,13 @@ model.summary()
 history = model.fit(
     x=q_train, 
     y=y_train,
-    epochs=n_eps, 
+    epochs=args.eps, 
     callbacks=[checkpoint], 
-    batch_size=b_size, 
+    batch_size=args.bsize, 
     validation_data=(q_valid,y_valid)
 )
 
 
 model.save('checkpoints/'+ data_ix + '_demo.hdf5')
 
-print("=== Batch Size: ", b_size)
+print("=== Batch Size: ", args.b_size)
