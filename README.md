@@ -79,7 +79,7 @@ In 25 epochs. One way to improve the recognition system performance is to encode
 1500/1500 [==============================] - 3s 2ms/sample - val_loss: 0.4408 - val_accuracy: 0.9060                              
 ```
 
-- Alternatively, training without Additional U-Net as the method proposed in [Douglas C. de Andrade et al.](https://arxiv.org/abs/1808.08929)
+- Alternatively, training without U-Net as the method proposed in [Douglas C. de Andrade et al.](https://arxiv.org/abs/1808.08929) and the [implementation](https://github.com/douglas125/SpeechCmdRecognition) with `kapre` layers.
 
 Please set `use_Unet = False.` in [model.py](https://github.com/huckiyang/speech_quantum_dl/blob/main/models.py#L81).
 
