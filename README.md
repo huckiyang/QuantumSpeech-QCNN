@@ -36,7 +36,7 @@ tar -xf speech_commands_v0.01.tar.gz
 
 ### 2.1. Pre-processed Features
 
-We provide 2000 pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing. You could get `90.6%` test accuracy by the provided data.                              
+We provide `2000` pre-processed feautres in `./data_quantum`, which included both mel features, and `(2,2)` quanvolution features with `1500` for training and `500` for testing. You could get `90.6%` test accuracy by the provided data.                              
 
 You could use `np.load` to load these features to train your own quantum speech processing model in [`3.1`](https://github.com/huckiyang/speech_quantum_dl/blob/main/README.md#3-training). 
 
@@ -79,7 +79,7 @@ In 25 epochs. One way to improve the recognition system performance is to encode
 1500/1500 [==============================] - 3s 2ms/sample - val_loss: 0.4408 - val_accuracy: 0.9060                              
 ```
 
-- Alternatively, training without U-Net as the method proposed in [Douglas C. de Andrade et al.](https://arxiv.org/abs/1808.08929) and the [implementation](https://github.com/douglas125/SpeechCmdRecognition) with `kapre` layers.
+- Alternatively, training without U-Net as the method proposed in [Douglas C. de Andrade et al.](https://arxiv.org/abs/1808.08929) similar to their [implementation](https://github.com/douglas125/SpeechCmdRecognition) but without `kapre` layers.
 
 Please set `use_Unet = False.` in [model.py](https://github.com/huckiyang/speech_quantum_dl/blob/main/models.py#L81).
 
