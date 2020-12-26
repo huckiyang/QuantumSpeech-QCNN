@@ -99,7 +99,7 @@ python cam_sp.py
 
 ### 3.3 CTC Model for Automatic Speech Recognition 
 
-We also provide a CTC model with Word Error Rate (WER) evaluation for Quantum Speech Recognition for future studies to the community refer to the [discussion](https://arxiv.org/abs/2010.13309). 
+We also provide a CTC model with Word Error Rate (WER) evaluation for future studies to the community refer to the [discussion](https://arxiv.org/abs/2010.13309). 
 
 For example, an output "y-e--a" of input "yes" is identified as an incorrect word with the CTC alignment.
 
