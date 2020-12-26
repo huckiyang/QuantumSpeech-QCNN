@@ -50,6 +50,8 @@ python main_qsr.py --sr 16000 --port 100 --mel 1 --quanv 1
 
 ### 2.3. Quanvolution Encoding (optional)
 
+<img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/Quanv.png" width="150">
+
 If you have pre-load audio features from `2.2.` you can set the quantum convolution kernal size in `helper_q_tool.py` function [quanv](https://github.com/huckiyang/speech_quantum_dl/blob/main/helper_q_tool.py#L47). We provide an example for kernal size = 3 in [line 57](https://github.com/huckiyang/speech_quantum_dl/blob/main/helper_q_tool.py#L57).
 
 You will see a message below during the Quanvolution Encoding with features extraction comment from `2.2.`.
