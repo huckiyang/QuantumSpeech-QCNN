@@ -130,6 +130,10 @@ If you think this work helps your research or use the code, please consider refe
 }
 ```
 
+## Acknowledgment 
+
+We would like to appreciate [Xanadu AI](https://www.xanadu.ai/) for providing the [PennyLane](https://pennylane.ai/) Quantum AI platform and [IBM research](https://www.research.ibm.com/) for providing [qiskit](https://qiskit.org/) and quantum hardware to the community. There is no conflict of interest.
+
 ## FAQ
 
 Since the area between speech and quantum ML is still quite new, please feel free to open a [issue](https://github.com/huckiyang/speech_quantum_dl/issues) for discussion. 
