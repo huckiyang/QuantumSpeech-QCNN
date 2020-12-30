@@ -10,7 +10,7 @@ from scipy.io import wavfile
 from tqdm import tqdm
 import warnings
 import qiskit
-from qiskit.providers.aer.noise.device import basic_device_noise_model
+# from qiskit.providers.aer.noise.device import basic_device_noise_model
 
 n_w = 4 # numbers of wires def 4
 noise_mode = False # for running at QPU
