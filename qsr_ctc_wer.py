@@ -66,7 +66,7 @@ if gen_asr_data == False:
     q_train = np.load(SAVE_PATH + "asr_q_train_demo.npy")
     q_valid = np.load(SAVE_PATH + "asr_q_test_demo.npy")
 else:
-    char_y_tr, char_y_val, new_x_tr, new_x_val, new_q_tr, new_q_val = get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train)
+    char_y_val, char_y_tr, new_x_val, new_x_tr, new_q_val, new_q_tr = get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train)
 
 print("-- Validation Size: ", np.array(char_y_val).shape, np.array(new_x_val).shape, np.array(new_q_val).shape)
 print("-- Training Size: ", np.array(char_y_tr).shape, np.array(new_x_tr).shape, np.array(new_q_tr).shape)
