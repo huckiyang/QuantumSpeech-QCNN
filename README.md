@@ -105,7 +105,7 @@ We also provide a CTC model with Word Error Rate (WER) evaluation for future stu
 
 For example, an output "y-e--a" of input "yes" is identified as an incorrect word with the CTC alignment.
 
-Noted this Quantum ASR CTC version is only supported `tensorflow-gpu==2.2`. Please create a new environment for running this experiment.
+Noted this Quantum ASR CTC version is only supported `tensorflow-gpu==2.3`. Please create a new environment for running this experiment.
 
 ```shell
 python qsr_ctc_wer.py
