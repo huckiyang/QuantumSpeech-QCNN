@@ -140,4 +140,4 @@ We would like to appreciate [Xanadu AI](https://www.xanadu.ai/) for providing th
 
 Since the area between speech and quantum ML is still quite new, please feel free to open a [issue](https://github.com/huckiyang/speech_quantum_dl/issues) for discussion. 
 
-Feel free to use this implementation for other speech processing or squence modeling tasks (e.g., speaker recognition, speech seperation, event detection ...) as the quantum advantages discussed in the [paper](https://arxiv.org/abs/2010.13309).
+Feel free to use this implementation for other speech processing or sequence modeling tasks (e.g., speaker recognition, speech seperation, event detection ...) as the quantum advantages discussed in the [paper](https://arxiv.org/abs/2010.13309).
