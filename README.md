@@ -1,5 +1,5 @@
 # Speech Quantum Deep Learning
-Quantum Machine Learning for Speech Processing.
+Quantum Machine Learning for Speech Recognition.
 
 - **NEW** Released the quantum speech processing code! (12/24) 
 
