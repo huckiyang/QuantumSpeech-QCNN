@@ -66,6 +66,9 @@ def gen_qspeech(x_train, x_valid, kr): # kernal size = 2x2 or 3x3
 
     q_valid = []
     print("\nQuantum pre-processing of test Speech:")
+    for idx, img in enumerate(x_valid):
+        print("{}/{}        ".format(idx + 1, len(x_valid)), end="\r")
+        q_train.append(quanv(img, kr))    
     q_valid = np.asarray(q_valid)
     
     return q_train, q_valid
