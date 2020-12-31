@@ -44,13 +44,13 @@ def get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train):
     new_q_val = []
 
     for idx, y in enumerate(y_valid):
-         if labels_10[np.argmax(y)] in labels:
+         if labels_ctc[np.argmax(y)] in labels:
              char_y_val.append(labels_ctc[np.argmax(y)])
              new_x_val.append(x_valid[idx])
              new_q_val.append(q_valid[idx])
 
     for idx, y in enumerate(y_train):
-         if labels_10[np.argmax(y)] in labels:
+         if labels_ctc[np.argmax(y)] in labels:
              char_y_tr.append(labels_ctc[np.argmax(y)])
              new_x_tr.append(x_train[idx])
              new_q_tr.append(q_train[idx])
@@ -65,7 +65,6 @@ if gen_asr_data == False:
     y_valid = np.load(SAVE_PATH + "asr_y_test_demo.npy")
     q_train = np.load(SAVE_PATH + "asr_q_train_demo.npy")
     q_valid = np.load(SAVE_PATH + "asr_q_test_demo.npy")
-else:
     char_y_val, char_y_tr, new_x_val, new_x_tr, new_q_val, new_q_tr = get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train)
 
 print("-- Validation Size: ", np.array(char_y_val).shape, np.array(new_x_val).shape, np.array(new_q_val).shape)
