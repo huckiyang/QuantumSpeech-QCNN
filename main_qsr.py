@@ -106,4 +106,4 @@ history = model.fit(
 
 model.save('checkpoints/'+ data_ix + '_demo.hdf5')
 
-print("=== Batch Size: ", args.b_size)
+print("=== Batch Size: ", args.bsize)
