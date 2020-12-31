@@ -14,7 +14,7 @@ from models import build_asr_model
 
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
-labels = [
+labels_ctc = [
     'bird', 'down', 'five', 'four', 'left', 'nine', 'stop', 'tree', 'zero',]
 
 characters = string.ascii_lowercase # set(char for label in labels for char in label)
@@ -45,13 +45,13 @@ def get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train):
 
     for idx, y in enumerate(y_valid):
          if labels_10[np.argmax(y)] in labels:
-             char_y_val.append(labels_10[np.argmax(y)])
+             char_y_val.append(labels_ctc[np.argmax(y)])
              new_x_val.append(x_valid[idx])
              new_q_val.append(q_valid[idx])
 
     for idx, y in enumerate(y_train):
          if labels_10[np.argmax(y)] in labels:
-             char_y_tr.append(labels_10[np.argmax(y)])
+             char_y_tr.append(labels_ctc[np.argmax(y)])
              new_x_tr.append(x_train[idx])
              new_q_tr.append(q_train[idx])
 
@@ -71,7 +71,7 @@ else:
 print("-- Validation Size: ", np.array(char_y_val).shape, np.array(new_x_val).shape, np.array(new_q_val).shape)
 print("-- Training Size: ", np.array(char_y_tr).shape, np.array(new_x_tr).shape, np.array(new_q_tr).shape)
 
-# Get the model
+# Get the QCNN-ASR-CTC model
 model = build_asr_model(30, 63, 4) # 60 126 1
 model.summary()
 
