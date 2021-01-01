@@ -11,12 +11,10 @@ import numpy as np
 from tqdm import tqdm
 import string
 from models import build_asr_model
-
+import json
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
-labels_ctc = [
-    'bird', 'down', 'five', 'four', 'left', 'nine', 'stop', 'tree', 'zero',]
-
+labels = ['go',  'up', 'on', 'no']
 characters = string.ascii_lowercase # set(char for label in labels for char in label)
 
 # Mapping characters to integers
@@ -31,41 +29,24 @@ num_to_char = L.experimental.preprocessing.StringLookup(
 
 
 b_size = 64
-MAX_word_length = 4 # for demo using a fixed length. May modify it with lambda function in CTC_layer.
-SAVE_PATH = "data_quantum/"
-gen_asr_data = False
+MAX_word_length = 2 # for demo using a fixed length. May modify it with lambda function in CTC_layer.
+SAVE_PATH = "data_quantum/asr_set/"
+load_asr_data = True
 
-def get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train):
-    char_y_tr = []
-    char_y_val = []
-    new_x_tr = []
-    new_x_val = []
-    new_q_tr = []
-    new_q_val = []
+if load_asr_data == True:
+    print("Load pre-processed speech data for CTC loss WER test")
+    new_x_tr = np.load(SAVE_PATH + "asr_x_tr.npy")
+    new_x_val = np.load(SAVE_PATH + "asr_x_val.npy")
+    new_q_tr = np.load(SAVE_PATH + "asr_q_tr.npy")
+    new_q_val = np.load(SAVE_PATH + "asr_q_val.npy")
+    with open(SAVE_PATH + "char_y_val.json", 'r') as f:
+        char_y_val = json.load(f)
+    with open(SAVE_PATH + "char_y_tr.json", 'r') as f:
+        char_y_tr = json.load(f)
 
-    for idx, y in enumerate(y_valid):
-         if labels_ctc[np.argmax(y)] in labels:
-             char_y_val.append(labels_ctc[np.argmax(y)])
-             new_x_val.append(x_valid[idx])
-             new_q_val.append(q_valid[idx])
-
-    for idx, y in enumerate(y_train):
-         if labels_ctc[np.argmax(y)] in labels:
-             char_y_tr.append(labels_ctc[np.argmax(y)])
-             new_x_tr.append(x_train[idx])
-             new_q_tr.append(q_train[idx])
-
-    return char_y_tr, char_y_val, new_x_tr, new_x_val, new_q_tr, new_q_val
-
-if gen_asr_data == False:
-    print("Load pre-processing speech data for CTC loss WER test")
-    x_train = np.load(SAVE_PATH + "asr_x_train_demo.npy")
-    x_valid = np.load(SAVE_PATH + "asr_x_test_demo.npy")
-    y_train = np.load(SAVE_PATH + "asr_y_train_demo.npy")
-    y_valid = np.load(SAVE_PATH + "asr_y_test_demo.npy")
-    q_train = np.load(SAVE_PATH + "asr_q_train_demo.npy")
-    q_valid = np.load(SAVE_PATH + "asr_q_test_demo.npy")
-    char_y_val, char_y_tr, new_x_val, new_x_tr, new_q_val, new_q_tr = get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train)
+else:
+    print("Please process your own features.")
+    exit()
 
 print("-- Validation Size: ", np.array(char_y_val).shape, np.array(new_x_val).shape, np.array(new_q_val).shape)
 print("-- Training Size: ", np.array(char_y_tr).shape, np.array(new_x_tr).shape, np.array(new_q_tr).shape)
@@ -101,8 +82,8 @@ validation_dataset = (
     .prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
 )
 
-epochs = 30
-early_stopping_patience = 10
+epochs = 50
+early_stopping_patience = 25
 # Add early stopping
 early_stopping = keras.callbacks.EarlyStopping(
     monitor="val_loss", patience=early_stopping_patience, restore_best_weights=True
@@ -153,3 +134,4 @@ for idx, word in enumerate(char_y_val[0:b_size*val_port]):
 
 print(pred_texts)
 print("=== QCNN-ASR WER:", 100*cor_idx/len(pred_texts), " %")
+model.save('checkpoints/' + 'ctc_asr_demo.hdf5')
