@@ -123,9 +123,11 @@ python qsr_ctc_wer.py
 ### Result pre-trained weight in `checkpoints/asr_ctc_demo.hdf5`
 
 ```python
-Epoch 38/50
-107/107 [==============================] - 5s 49ms/step - loss: 0.1097 - val_loss: 0.5990
-=== WER: 11.97916  %
+Epoch 32/50
+107/107 [==============================] - 5s 49ms/step - loss: 0.1191 - val_loss: 0.7115
+Epoch 33/50
+107/107 [==============================] - 5s 49ms/step - loss: 0.1547 - val_loss: 0.6701
+=== WER: 9.895833333333334  %  %
 ```
 
 Tutorial Link. 
