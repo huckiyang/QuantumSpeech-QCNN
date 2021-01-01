@@ -1,4 +1,5 @@
 from tensorflow import keras
+from tensorflow.keras.layers import Input, Lambda, BatchNormalization, Conv1D, GRU, TimeDistributed, Activation, Dense, Flatten
 from tensorflow.keras.optimizers import SGD, RMSprop
 from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.losses import categorical_crossentropy
@@ -15,6 +16,7 @@ import json
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 labels = ['go',  'up', 'on', 'no']
+
 characters = string.ascii_lowercase # set(char for label in labels for char in label)
 
 # Mapping characters to integers
@@ -27,14 +29,48 @@ num_to_char = L.experimental.preprocessing.StringLookup(
     vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True
 )
 
+# test_x = tf.random.uniform([4, 60, 126, 1])
+# test_y = labels 
 
 b_size = 64
-MAX_word_length = 2 # for demo using a fixed length. May modify it with lambda function in CTC_layer.
+MAX_word_length = 2
 SAVE_PATH = "data_quantum/asr_set/"
-load_asr_data = True
+gen_asr_data = False
 
-if load_asr_data == True:
-    print("Load pre-processed speech data for CTC loss WER test")
+
+def get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train):
+    char_y_tr = []
+    char_y_val = []
+    new_x_tr = []
+    new_x_val = []
+    new_q_tr = []
+    new_q_val = []
+    
+    for idx, y in enumerate(y_valid):
+         if labels_10[np.argmax(y)] in labels:
+             char_y_val.append(labels_10[np.argmax(y)])
+             new_x_val.append(x_valid[idx])
+             new_q_val.append(q_valid[idx])
+
+    for idx, y in enumerate(y_train):
+         if labels_10[np.argmax(y)] in labels:
+             char_y_tr.append(labels_10[np.argmax(y)])
+             new_x_tr.append(x_train[idx])
+             new_q_tr.append(q_train[idx])
+
+    return char_y_tr, char_y_val, new_x_tr, new_x_val, new_q_tr, new_q_val
+
+if gen_asr_data == True:
+    x_train = np.load(SAVE_PATH + "x_train_speech_all.npy")
+    x_valid = np.load(SAVE_PATH + "x_test_speech_all.npy")
+    y_train = np.load(SAVE_PATH + "y_train_speech_all.npy")
+    y_valid = np.load(SAVE_PATH + "y_test_speech_all.npy")
+    q_train = np.load(SAVE_PATH + "q_train_speech_all.npy")
+    q_valid = np.load(SAVE_PATH + "q_test_speech_all.npy")
+
+    char_y_tr, char_y_val, new_x_tr, new_x_val, new_q_tr, new_q_val = get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train)
+else: 
+    print("Load Data")
     new_x_tr = np.load(SAVE_PATH + "asr_x_tr.npy")
     new_x_val = np.load(SAVE_PATH + "asr_x_val.npy")
     new_q_tr = np.load(SAVE_PATH + "asr_q_tr.npy")
@@ -42,24 +78,24 @@ if load_asr_data == True:
     with open(SAVE_PATH + "char_y_val.json", 'r') as f:
         char_y_val = json.load(f)
     with open(SAVE_PATH + "char_y_tr.json", 'r') as f:
-        char_y_tr = json.load(f)
-
-else:
-    print("Please process your own features.")
-    exit()
+        char_y_tr = json.load(f)    
 
 print("-- Validation Size: ", np.array(char_y_val).shape, np.array(new_x_val).shape, np.array(new_q_val).shape)
 print("-- Training Size: ", np.array(char_y_tr).shape, np.array(new_x_tr).shape, np.array(new_q_tr).shape)
 
-# Get the QCNN-ASR-CTC model
+
+# Get the model
 model = build_asr_model(30, 63, 4) # 60 126 1
 model.summary()
 
 
 def encode_single_sample(img, label):
-    # Map the characters in label to numbers
+    # 5. Transpose the image because we want the time
+    # dimension to correspond to the width of the image.
+    # img = tf.transpose(img, perm=[1, 0, 2])
+    # 6. Map the characters in label to numbers
     label = char_to_num(tf.strings.unicode_split(label, input_encoding="UTF-8"))
-    # Return a dict as our model is expecting two inputs
+    # 7. Return a dict as our model is expecting two inputs
     return {"speech": img, "label": label}
 
 print("=== Making CTC input dataset ...")
@@ -83,7 +119,7 @@ validation_dataset = (
 )
 
 epochs = 50
-early_stopping_patience = 25
+early_stopping_patience = 10
 # Add early stopping
 early_stopping = keras.callbacks.EarlyStopping(
     monitor="val_loss", patience=early_stopping_patience, restore_best_weights=True
@@ -100,7 +136,7 @@ prediction_model = keras.models.Model(
     model.get_layer(name="speech").input, model.get_layer(name="dense2").output
 )
 
-prediction_model.summary()
+# prediction_model.summary()
 
 # A utility function to decode the output of the network
 def decode_batch_predictions(pred, max_length=MAX_word_length):
@@ -131,7 +167,9 @@ pred_texts = list(itertools.chain.from_iterable(pred_texts))
 for idx, word in enumerate(char_y_val[0:b_size*val_port]):
     if word != pred_texts[idx]:
         cor_idx += 1
-
+#    else:
+#        if len(word) == len(pred_texts[idx]):
+#           pass CER
 print(pred_texts)
-print("=== QCNN-ASR WER:", 100*cor_idx/len(pred_texts), " %")
-model.save('checkpoints/' + 'ctc_asr_demo.hdf5')
+print("=== WER:", 100*cor_idx/len(pred_texts), " %")
+model.save('checkpoints/' + 'asr_ctc_demo.hdf5')
