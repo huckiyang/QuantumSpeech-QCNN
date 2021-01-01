@@ -122,6 +122,11 @@ python qsr_ctc_wer.py
 
 - result and pre-trained weight in `checkpoints/`
 
+```python
+Epoch 38/50
+107/107 [==============================] - 5s 49ms/step - loss: 0.1097 - val_loss: 0.5990
+=== WER: 11.97916  %
+```
 
 Tutorial Link. 
 
