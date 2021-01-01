@@ -120,7 +120,7 @@ bash unzip.sh
 python qsr_ctc_wer.py
 ```
 
-- result and pre-trained weight in `checkpoints/asr_ctc_demo.hdf5`
+### result pre-trained weight in `checkpoints/asr_ctc_demo.hdf5`
 
 ```python
 Epoch 38/50
