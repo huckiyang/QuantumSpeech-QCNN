@@ -114,13 +114,13 @@ cd data_quantum/asr_set
 bash unzip.sh
 ```
 
-- run the ctc model in `./`
+- run the ctc model in `./speech_quantum_dl`
 
 ```shell
 python qsr_ctc_wer.py
 ```
 
-- result and pre-trained weight in `checkpoints/`
+### Result pre-trained weight in `checkpoints/asr_ctc_demo.hdf5`
 
 ```python
 Epoch 38/50
