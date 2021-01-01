@@ -35,7 +35,7 @@ num_to_char = L.experimental.preprocessing.StringLookup(
 b_size = 64
 MAX_word_length = 2
 SAVE_PATH = "data_quantum/asr_set/"
-load_asr_data = False
+load_asr_data = True
 
 
 def get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train):
