@@ -35,7 +35,7 @@ num_to_char = L.experimental.preprocessing.StringLookup(
 b_size = 64
 MAX_word_length = 2
 SAVE_PATH = "data_quantum/asr_set/"
-gen_asr_data = False
+load_asr_data = False
 
 
 def get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train):
@@ -60,16 +60,7 @@ def get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train):
 
     return char_y_tr, char_y_val, new_x_tr, new_x_val, new_q_tr, new_q_val
 
-if gen_asr_data == True:
-    x_train = np.load(SAVE_PATH + "x_train_speech_all.npy")
-    x_valid = np.load(SAVE_PATH + "x_test_speech_all.npy")
-    y_train = np.load(SAVE_PATH + "y_train_speech_all.npy")
-    y_valid = np.load(SAVE_PATH + "y_test_speech_all.npy")
-    q_train = np.load(SAVE_PATH + "q_train_speech_all.npy")
-    q_valid = np.load(SAVE_PATH + "q_test_speech_all.npy")
-
-    char_y_tr, char_y_val, new_x_tr, new_x_val, new_q_tr, new_q_val = get_asr_data(y_valid, y_train, x_valid, x_train, q_valid, q_train)
-else: 
+if load_asr_data == True:
     print("Load Data")
     new_x_tr = np.load(SAVE_PATH + "asr_x_tr.npy")
     new_x_val = np.load(SAVE_PATH + "asr_x_val.npy")
@@ -79,6 +70,9 @@ else:
         char_y_val = json.load(f)
     with open(SAVE_PATH + "char_y_tr.json", 'r') as f:
         char_y_tr = json.load(f)    
+else:
+    print("Please Proc. your features")
+    exit()
 
 print("-- Validation Size: ", np.array(char_y_val).shape, np.array(new_x_val).shape, np.array(new_q_val).shape)
 print("-- Training Size: ", np.array(char_y_tr).shape, np.array(new_x_tr).shape, np.array(new_q_tr).shape)
