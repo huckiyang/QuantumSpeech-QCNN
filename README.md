@@ -114,7 +114,7 @@ cd data_quantum/asr_set
 bash unzip.sh
 ```
 
-- run the ctc model in `./`
+- run the ctc model in `./speech_quantum_dl`
 
 ```shell
 python qsr_ctc_wer.py
