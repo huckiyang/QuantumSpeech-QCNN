@@ -107,13 +107,21 @@ For example, an output "y-e--a" of input "yes" is identified as an incorrect wor
 
 Noted this Quantum ASR CTC version is only supported `tensorflow-gpu==2.3`. Please create a new environment for running this experiment.
 
+- unzip the features for asr
+
+```
+cd data_quantum/asr_set
+bash unzip.sh
+```
+
+- run the ctc model in `./`
+
 ```shell
 python qsr_ctc_wer.py
 ```
 
-```python
-=== QCNN-ASR WER: 9.17%
-```
+- result and pre-trained weight in `checkpoints/`
+
 
 Tutorial Link. 
 
