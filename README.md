@@ -30,6 +30,7 @@ We use Google [Speech Commands Dataset V1](https://ai.googleblog.com/2017/08/lau
 
 ```shell
 mkdir ../dataset
+cd ../dataset
 wget http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz
 tar -xf speech_commands_v0.01.tar.gz
 ```
