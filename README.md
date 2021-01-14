@@ -5,7 +5,7 @@ Quantum Machine Learning for Automatic Spoken-Term Recognition.
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/demo.png" width="200">
 
-- [Paper Link](https://arxiv.org/abs/2010.13309) "Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition" 
+- [Preprint Link](https://arxiv.org/abs/2010.13309) "Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition" 
 
 ## 1. Environment
 
