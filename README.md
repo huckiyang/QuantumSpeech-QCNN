@@ -1,7 +1,7 @@
 # Speech Quantum Deep Learning
-Quantum Machine Learning for Speech Recognition.
+Quantum Machine Learning for Automatic Spoken-Term Recognition.
 
-- **NEW** Released the quantum speech processing code! (12/24) 
+- **NEW** Released the quantum speech processing code! (2020)
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/demo.png" width="200">
 
