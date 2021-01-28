@@ -1,7 +1,7 @@
 # Speech Quantum Deep Learning
 Quantum Machine Learning for Automatic Spoken-Term Recognition. 
 
-- **NEW** Released the quantum speech processing code! (2020) <img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow%20-%23FF6F00.svg?&style=for-the-badge&logo=TensorFlow&logoColor=white" />
+- **NEW** Released the quantum speech processing code! (2020) |  <img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow%20-%23FF6F00.svg?&style=for-the-badge&logo=TensorFlow&logoColor=white" />
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/demo.png" width="200">
 
