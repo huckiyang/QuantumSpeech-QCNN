@@ -1,7 +1,11 @@
 # Speech Quantum Deep Learning
 Quantum Machine Learning for Automatic Spoken-Term Recognition. 
 
-- **NEW** Released the quantum speech processing code! (2020) 
+- **NEW** Our paper is accepted to IEEE International Conference on Acoustics, Speech, & Signal Processing (ICASSP) 2021.
+
+We would like to thank the reviewers and committee members in the speech processing and quantum signals community. 
+
+Released the quantum speech processing code! (2020) 
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/demo.png" width="200">
 
