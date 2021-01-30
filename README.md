@@ -1,7 +1,7 @@
 # Speech Quantum Deep Learning
 Quantum Machine Learning for Automatic Spoken-Term Recognition. 
 
-- **NEW** Our paper is accepted to IEEE [International Conference on Acoustics, Speech, & Signal Processing](https://2021.ieeeicassp.org/) (ICASSP) 2021.
+- **NEW** Our paper is accepted to IEEE [International Conference on Acoustics, Speech, & Signal Processing](https://2021.ieeeicassp.org/) ([ICASSP](https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_signalprocessing)) 2021.
 
 We would like to thank the reviewers and committee members in the speech processing and quantum signals community. 
 
