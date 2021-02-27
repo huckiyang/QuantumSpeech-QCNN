@@ -11,6 +11,7 @@ Released the quantum speech processing code! (2020 Dec) [Colab demo](https://col
 
 - [Preprint Link](https://arxiv.org/abs/2010.13309) "Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition" 
 
+
 ## 1. Environment
 
 <img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow%20-%23FF6F00.svg?&style=for-the-badge&logo=TensorFlow&logoColor=white" />
