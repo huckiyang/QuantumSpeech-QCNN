@@ -154,6 +154,10 @@ If you think this work helps your research or use the code, please consider refe
 }
 ```
 
+## Federated Learning and Virtualization
+
+We use [PySyft](https://github.com/OpenMined/PySyft) for vertical federated learning setup. Please refer to veritical learning [example](https://github.com/OpenMined/PySyft/tree/dev/examples/vertical-learning).
+
 ## Acknowledgment 
 
 We would like to appreciate [Xanadu AI](https://www.xanadu.ai/) for providing the [PennyLane](https://pennylane.ai/) and [IBM research](https://www.research.ibm.com/) for providing [qiskit](https://qiskit.org/) and quantum hardware to the community. There is no conflict of interest.
