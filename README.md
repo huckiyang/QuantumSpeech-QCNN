@@ -5,7 +5,7 @@ Quantum Machine Learning for Automatic Spoken-Term Recognition.
 
 We would like to thank the reviewers and committee members in the Speech Processing and Quantum Signals community. 
 
-Released the quantum speech processing code! (2020 Dec) [Colab demo](https://colab.research.google.com/drive/11Yi53W6-Z-uW84A8Sr6OqOMlBIel1PKM?usp=sharing) is also provided. 
+Released the quantum speech processing code! (2020 Dec) [Colab demo](https://colab.research.google.com/drive/11Yi53W6-Z-uW84A8Sr6OqOMlBIel1PKM?usp=sharing) is also provided.
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/demo.png" width="200">
 
