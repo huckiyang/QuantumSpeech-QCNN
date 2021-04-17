@@ -11,7 +11,9 @@ Authors: Chao-Han Huck Yang, Jun Qi, Samuel Yen-Chi Chen, Pin-Yu Chen
 This ICASSP Demonstration and Registration Fee is Supported by:
 
 ```
-This work is supported by the U.S.  Department of Energy, Office of Science, Office of High Energy Physics program under Award Number DE-SC-0012704 
+This work is supported by the U.S. Department of Energy, Office of Science, Office of High Energy Physics program under Award Number DE-SC-0012704 
 
 and the Brookhaven National Laboratory Directed Research and Development (LDRD) Program #20-024.
 ```
+
+Note: We are open to collaborations and applying for grant chances. 
