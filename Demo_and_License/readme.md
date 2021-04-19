@@ -2,6 +2,8 @@
 
 Authors: Chao-Han Huck Yang, Jun Qi, Samuel Yen-Chi Chen, Pin-Yu Chen
 
+June 9, 2021, from 8:00-10:00, EST
+
 ## Interative Speech Commands Recognition
 
 [Colab Link](https://colab.research.google.com/drive/1gHawQf6G1xRvb45OObe5fOyRdAPB5pkq#scrollTo=N29fLl3HD0fQ) | [Video](https://www.youtube.com/watch?v=tO2GvdXJpDg)
