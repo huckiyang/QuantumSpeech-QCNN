@@ -4,7 +4,7 @@ Authors: Chao-Han Huck Yang, Jun Qi, Samuel Yen-Chi Chen, Pin-Yu Chen
 
 ## Interative Speech Commands Recognition
 
-[Colab Link](https://colab.research.google.com/drive/1gHawQf6G1xRvb45OObe5fOyRdAPB5pkq#scrollTo=N29fLl3HD0fQ) [Video](https://www.youtube.com/watch?v=tO2GvdXJpDg)
+[Colab Link](https://colab.research.google.com/drive/1gHawQf6G1xRvb45OObe5fOyRdAPB5pkq#scrollTo=N29fLl3HD0fQ) | [Video](https://www.youtube.com/watch?v=tO2GvdXJpDg)
 
 ## Acknoledgement 
 
