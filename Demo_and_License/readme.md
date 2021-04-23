@@ -1,5 +1,16 @@
 # Demonstration of Quantum Circuits Learning for Spoken Commands Recognition
 
+<ins style="display:block;">
+<script id="6082ec83d696fb5e0c058e4b" src="https://blackbox.feathr.co/v1/creatives/6082ec83d696fb5e0c058e4b/script.js" async></script>
+<noscript>
+    <a style="position: relative; display: inline-block; cursor: pointer;" target="_blank" href="https://polo.feathr.co/v1/analytics/crumb?a_id=588f5ef88e80271ed938605b&cpn_id=60772f265738c36951564557&crv_id=6082ec83d696fb5e0c058e4b&flvr=ad_click&e_id=5f4ea53926d08e58c8a388ca&t_id=60772f285738c3695156455e&rdr=1&p_id=6081bf2b61ffff4537c5a6af">
+        <img src="https://djhofpfq0ge2i.cloudfront.net/banners/e1hpatcz2/images/png?t=1619192972107" style="width:500px;height:100px;border:none;" width="500" height="100"/>
+    </a>
+    <img src="https://marco.feathr.co/v1/refresh" border=0 width=0 height=0 />
+    <img src="https://polo.feathr.co/v1/analytics/crumb?a_id=588f5ef88e80271ed938605b&cpn_id=60772f265738c36951564557&crv_id=6082ec83d696fb5e0c058e4b&flvr=ad_view&e_id=5f4ea53926d08e58c8a388ca&t_id=60772f285738c3695156455e&p_id=6081bf2b61ffff4537c5a6af" border=0 width=0 height=0 />
+</noscript>
+</ins>
+
 Authors: Chao-Han Huck Yang, Jun Qi, Samuel Yen-Chi Chen, Pin-Yu Chen
 
 June 9, 2021, from 8:00-10:00, EST
