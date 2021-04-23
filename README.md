@@ -3,6 +3,16 @@ Quantum Machine Learning for Automatic Spoken-Term Recognition.
 
 - **NEW** Our paper is accepted to IEEE International Conference on Acoustics, Speech, & Signal Processing ([ICASSP](https://scholar.google.com/citations?view_op=top_venues&hl=en&venue=HHC6AUo36fEJ.2020&vq=phy_acousticssound)) 2021.
 
+<ins style="display:block;">
+<noscript>
+    <a style="position: relative; display: inline-block; cursor: pointer;" target="_blank" href="https://polo.feathr.co/v1/analytics/crumb?a_id=588f5ef88e80271ed938605b&cpn_id=60772f265738c36951564557&crv_id=6082ec83d696fb5e0c058e4b&flvr=ad_click&e_id=5f4ea53926d08e58c8a388ca&t_id=60772f285738c3695156455e&rdr=1&p_id=6081bf2b61ffff4537c5a6af">
+        <img src="https://djhofpfq0ge2i.cloudfront.net/banners/e1hpatcz2/images/png?t=1619192972107" style="width:500px;height:100px;border:none;" width="500" height="100"/>
+    </a>
+    <img src="https://marco.feathr.co/v1/refresh" border=0 width=0 height=0 />
+    <img src="https://polo.feathr.co/v1/analytics/crumb?a_id=588f5ef88e80271ed938605b&cpn_id=60772f265738c36951564557&crv_id=6082ec83d696fb5e0c058e4b&flvr=ad_view&e_id=5f4ea53926d08e58c8a388ca&t_id=60772f285738c3695156455e&p_id=6081bf2b61ffff4537c5a6af" border=0 width=0 height=0 />
+</noscript>
+</ins>
+
 We would like to thank the reviewers and committee members in the Speech Processing and Quantum Signals community. 
 
 Released the quantum speech processing code! (2020 Dec) [Colab demo](https://colab.research.google.com/drive/11Yi53W6-Z-uW84A8Sr6OqOMlBIel1PKM?usp=sharing) is also provided. ICASSP [Video](https://youtu.be/ZigIaFFFUhw) | [Slides](https://docs.google.com/presentation/d/1wHWnx1KXbzPe_YX-QXayISVBgLNa9IYe3EF3Jd42VZY/edit?usp=sharing)
