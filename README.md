@@ -157,11 +157,13 @@ Tutorial Link.
 If you think this work helps your research or use the code, please consider reference our paper. Thank you!
 
 ```bib
-@article{yang2020decentralizing,
-  title={Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition},
+@inproceedings{yang2021decentralizing,
+  title={Decentralizing feature extraction with quantum convolutional neural network for automatic speech recognition},
   author={Yang, Chao-Han Huck and Qi, Jun and Chen, Samuel Yen-Chi and Chen, Pin-Yu and Siniscalchi, Sabato Marco and Ma, Xiaoli and Lee, Chin-Hui},
-  journal={arXiv preprint arXiv:2010.13309},
-  year={2020}
+  booktitle={2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={6523--6527},
+  year={2021},
+  organization={IEEE}
 }
 ```
 
