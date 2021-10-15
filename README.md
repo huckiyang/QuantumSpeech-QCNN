@@ -19,7 +19,7 @@ Released the quantum speech processing code! (2020 Dec) [Colab demo](https://col
 
 <img src="https://github.com/huckiyang/speech_quantum_dl/blob/main/images/demo.png" width="200">
 
-- [Preprint Link](https://arxiv.org/abs/2010.13309) "Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition" 
+- [ICASSP 21](https://ieeexplore.ieee.org/abstract/document/9413453) | [Preprint](https://arxiv.org/abs/2010.13309) "Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition" 
 
 
 ## 1. Environment
