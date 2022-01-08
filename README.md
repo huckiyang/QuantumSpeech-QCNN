@@ -169,7 +169,7 @@ If you think this work helps your research or use the code, please consider refe
 
 ## Federated Learning and Virtualization
 
-We use [PySyft](https://github.com/OpenMined/PySyft) for vertical federated learning setup. Please refer to veritical learning [example](https://github.com/OpenMined/PySyft/tree/dev/examples/vertical-learning) for decentralized learning.
+See [PySyft](https://github.com/OpenMined/PySyft) and [PyVertical](https://github.com/OpenMined/PyVertical) for vertical federated learning setup. Please refer to a veritical learning [example](https://github.com/OpenMined/PyVertical/blob/master/examples/PyVertical%20Example.ipynb) for virtualization.
 
 ## Acknowledgment 
 
