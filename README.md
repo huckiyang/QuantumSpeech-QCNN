@@ -1,6 +1,7 @@
 # Quantum Deep Learning for Speech 
 Quantum Machine Learning for Automatic Spoken-Term Recognition. 
 
+- **NEW** There is a new [M.Sc. thesis](https://erepo.uef.fi/bitstream/handle/123456789/28985/urn_nbn_fi_uef-20221504.pdf?sequence=1) work by Juha Korvenaho (sup by Prof. Tomi Kinnunen) with more investigation. Feel free to have a look. 
 - **NEW** Our paper is accepted to IEEE International Conference on Acoustics, Speech, & Signal Processing ([ICASSP](https://scholar.google.com/citations?view_op=top_venues&hl=en&venue=HHC6AUo36fEJ.2020&vq=phy_acousticssound)) 2021.
 
 <ins style="display:block;">
